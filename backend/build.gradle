@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'dev.nahtan'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.tinylog:tinylog-api:2.7.0'
+    implementation 'org.tinylog:tinylog-impl:2.7.0'
+}
+
+jar {
+    dependsOn(shadowJar)
+    setEnabled(false)
+    manifest{
+        attributes(
+                "main-class": "dev.nahtan.Main"
+        )
+    }
+}
+
+shadowJar {
+    archiveClassifier.set("")
+}
