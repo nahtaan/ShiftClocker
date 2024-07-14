@@ -1,3 +1,4 @@
+# CURRENTLY ONLY SUPPORTS MYSQL / MARIADB
 db-username: 'username'
 db-password: 'password'
 db-name: 'name'
