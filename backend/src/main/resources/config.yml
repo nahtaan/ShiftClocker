@@ -1,0 +1,5 @@
+db-username: 'username'
+db-password: 'password'
+db-name: 'name'
+db-host: 'host'
+db-port: 3306
