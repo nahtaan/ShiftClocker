@@ -11,9 +11,15 @@ repositories {
 }
 
 dependencies {
+    // Loggers
     implementation 'org.tinylog:tinylog-api:2.7.0'
     implementation 'org.tinylog:tinylog-impl:2.7.0'
+    // config files
     implementation 'org.yaml:snakeyaml:1.24'
+    // mysql
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    // http REST api
+    implementation('com.sparkjava:spark-core:2.9.4')
 }
 
 jar {

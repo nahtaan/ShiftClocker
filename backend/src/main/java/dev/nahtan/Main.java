@@ -1,5 +1,6 @@
 package dev.nahtan;
 
+import dev.nahtan.data.Database;
 import org.tinylog.Logger;
 
 import java.io.File;
@@ -7,6 +8,7 @@ import java.net.URISyntaxException;
 
 public class Main {
     private static Config config;
+    private static Database database;
 
     public static void main(String... args) {
         Logger.info("Starting Backend Server");
@@ -17,7 +19,11 @@ public class Main {
             return;
         }
 
-
+        database = new Database();
+        // Stop execution if the database could not be connected to.
+        if(!database.connect()) {
+            return;
+        }
 
 
         /*
@@ -59,4 +65,7 @@ public class Main {
         }
     }
 
+    public static Config getConfig() {
+        return config;
+    }
 }
